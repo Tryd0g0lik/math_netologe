@@ -16,6 +16,8 @@ module.exports = {
 		"max-classes-per-file": 0,
 		"no-useless-escape": 0,
 		"new-cap": 0,
+		"import/prefer-default-export": 0,
+		"no-console": 0,
 		"no-undef": 0,
 		"no-mixed-operators": 0,
 		"space-before-blocks": 0,
