@@ -1,79 +1,88 @@
 class Main {
-	constructor(type, attack, defence) {
+	constructor(type, defence) {
 		this.type = type;
-		this.attack = attack;
 		this.defence = defence;
 	}
 
-	set stoned(value) {
-		/*
-		* TODO: "value" - Дистанция.
-			* "atack" - Сила урона.
-			* "stoned" - Сила "дурман".
-			*/
-
-		const result = Math.round(this.defence - (this.defence * (value * 10 / 100)));
-		this.attack = result;
-
-		if (result <= 0) {
-			this.attack = 0;
-		}
-
-		this.stone = this.attack - Math.round((Math.log2(value) * 5));
+	set attacks(value) {
+		const resp = Math.round(this.defence - (this.defence * (value * 10 / 100)));
+		this.attack = resp;
 	}
 
-	get stoned() {
-		const st = [this].filter((item) => {
-			if (!item.stone !== true) {
-				return item.stone;
-			}
-			return undefined;
-		});
+	get attacks() {
+		const result = this.attack;
+		return result;
+	}
 
+	set stoneds(value) {
+		/*
+		* TODO: "value" - Дистанция.
+		* "atack" - Сила урона.
+		* "stoned" - Сила "дурман".
+		*/
+		this.stoned = this.attack - Math.round((Math.log2(value) * 5));
+	}
+
+	get stoneds() {
+		const st = this.stoned;
 		return st;
 	}
 }
 
 export class Magician extends Main {
-	constructor(name, type = "Magician", attack = Number(10), defence = Number(40)) {
-		super(name, type, attack, defence);
+	constructor(name, type = "Magician", defence = 35) {
+		super(type, defence);
+		this.type = name;
 	}
 
-	setStoned(value) {
-		super.stoned = value;
+	magicianAttacks(value) {
+		super.attacks = value;
+		this.magicianAttack = super.attacks;
+		const at = this.magicianAttack;
+		return at;
 	}
 
-	getStoned() {
-		console.log("this.stone:=>", this.stone);
-		const st = this.stone;
+	magicianStoneds(value) {
+		// super.stoned = value;
+		super.stoneds = value;
+		this.magicianStoned = super.stoneds;
+		const st = this.magicianStoned;
 		return st;
 	}
 }
 
 export class Daemon extends Main {
-	constructor(name, type = "Daemon", attack = Number(25), defence = Number(40)) {
-		super(name, type, attack, defence);
+	constructor(name, type = "Daemon", defence = 40) {
+		super(type, defence);
+		this.type = name;
 	}
 
-	setStoned(value) {
-		super.stoned = value;
+	daemonAttacks(value) {
+		super.attacks = value;
+		this.daemonAttack = super.attacks;
+		const at = this.daemonAttack;
+		return at;
 	}
 
-	getStoned() {
-		console.log("this.stone:=>", this.stone);
-		const st = this.stone;
+	daemonStoneds(value) {
+		// super.stoned = value;
+		super.stoneds = value;
+		this.daemonStoned = super.stoneds;
+		const st = this.daemonStoned;
 		return st;
 	}
 }
 
-console.log("\--------------Magus--------------/");
-const mg = new Magician("Magus");
-mg.setStoned(5);
-mg.getStoned();
-console.log(`===>: ${mg.stone}`);
-console.log();
-console.log("\--------------Org---------------/");
-const org = new Magician("Org");
-org.setStoned(5);
-org.getStoned();
-console.log(`===>: ${org.stone}`);
+// console.log("\--------------Magus--------------/");
+// const mg = new Magician("Magus");
+// mg.magicianAttacks(5);
+// mg.magicianStoneds(5);
+// console.log("MagusAttack ===>:", mg.magicianAttack);
+// console.log("MagusStoned ===>:", mg.magicianStoned);
+// console.log();
+// console.log("\--------------Org---------------/");
+// const org = new Daemon("Org");
+// org.daemonAttacks(5);
+// console.log("OrgAttack ===>:", org.daemonAttack);
+// org.daemonStoneds(5);
+// console.log("daemonStoned ===>:", org.daemonStoned);
