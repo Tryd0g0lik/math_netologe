@@ -8,9 +8,9 @@ class Main {
 	set stoned(value) {
 		/*
 		* TODO: "value" - Дистанция.
-			* "atack" - Сила урона.
-			* "stoned" - Сила "дурман".
-			*/
+		* "atack" - Сила урона.
+		* "stoned" - Сила "дурман".
+		*/
 
 		const result = Math.round(this.defence - (this.defence * (value * 10 / 100)));
 		this.attack = result;
