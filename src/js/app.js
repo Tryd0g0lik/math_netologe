@@ -73,17 +73,16 @@ export class Daemon extends Main {
 	}
 }
 
-console.log("\--------------Magus--------------/");
-const mg = new Magician("Magus");
-mg.magicianAttacks(5);
-mg.magicianStoneds(5);
-console.log("MagusAttack ===>:", mg.magicianAttack);
-console.log("MagusStoned ===>:", mg.magicianStoned);
-console.log();
-console.log("\--------------Org---------------/");
-const org = new Daemon("Org");
-org.daemonAttacks(5);
-console.log("OrgAttack ===>:", org.daemonAttack);
-org.daemonStoneds(5);
-console.log("daemonStoned ===>:", org.daemonStoned);
-
+// console.log("\--------------Magus--------------/");
+// const mg = new Magician("Magus");
+// mg.magicianAttacks(5);
+// mg.magicianStoneds(5);
+// console.log("MagusAttack ===>:", mg.magicianAttack);
+// console.log("MagusStoned ===>:", mg.magicianStoned);
+// console.log();
+// console.log("\--------------Org---------------/");
+// const org = new Daemon("Org");
+// org.daemonAttacks(5);
+// console.log("OrgAttack ===>:", org.daemonAttack);
+// org.daemonStoneds(5);
+// console.log("daemonStoned ===>:", org.daemonStoned);
